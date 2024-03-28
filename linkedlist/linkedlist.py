@@ -8,7 +8,7 @@ class Node:
 
 class Linkedlist:
     def __init__(self):
-        self.head = Node()
+        self.head = None
     def append(self, data):
         if self.head is None:
             self.head=Node(data)
@@ -22,7 +22,7 @@ class Linkedlist:
         
     def length(self):
         count = 0
-        node = node.head
+        node = self.head
         
         while node:
             count += 1
@@ -33,20 +33,13 @@ class Linkedlist:
     def elem(self):
         elements = []
         node = self.head
-    
         while node:
-            elements.append(self.head)
+            elements.append(node.data)
             node = node.next
-        
         print(elements)
         
-
     def __str__(self):
         return f"{self.head} ->Linked"
-
-
-
-
 
 kl = Linkedlist()
 kl.append(1)
