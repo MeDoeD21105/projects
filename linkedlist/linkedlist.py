@@ -19,6 +19,27 @@ class Linkedlist:
             node = node.next
             
         node.next = Node(data)
+        
+    def length(self):
+        count = 0
+        node = node.head
+        
+        while node:
+            count += 1
+            node = node.next
+            
+        return count
+
+    def elem(self):
+        elements = []
+        node = self.head
+    
+        while node:
+            elements.append(self.head)
+            node = node.next
+        
+        print(elements)
+        
 
     def __str__(self):
         return f"{self.head} ->Linked"
@@ -34,3 +55,5 @@ kl.append(10)
 kl.append(20)
 kl.append(30)
 print(kl)
+print(kl.length())
+kl.elem()
