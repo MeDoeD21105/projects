@@ -1,0 +1,14 @@
+{
+    "id_video 1": {
+        "title": "#8. Перенаправления (redirect). Функция reverse | Уроки по Django 4\n        ",
+        "url": "https://www.youtube.com/watch?v=cFPWBKORMlg&list=PLA0M1Bcd0w8yU5h2vwZ4LO7h1xt8COUXl&index=9&pp=iAQB"
+    },
+    "id_video 2": {
+        "title": "#9. Шаблоны, начало. Функции render() и render to string() | Уроки по Django 4\n        ",
+        "url": "https://www.youtube.com/watch?v=mSWztki_b98&list=PLA0M1Bcd0w8yU5h2vwZ4LO7h1xt8COUXl&index=10&t=4s&pp=iAQB"
+    },
+    "id_video 3": {
+        "title": "#10. Передача данных (переменных) в шаблоны | Уроки по Django 4\n        ",
+        "url": "https://www.youtube.com/watch?v=oPFLfiRVzZw&list=PLA0M1Bcd0w8yU5h2vwZ4LO7h1xt8COUXl&index=11&pp=iAQB"
+    }
+}
