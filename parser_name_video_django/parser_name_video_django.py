@@ -20,15 +20,15 @@ total = soup.find_all(class_="yt-simple-endpoint style-scope ytd-playlist-video-
 
 
 
-#with open("django_learning_topics.txt", "w", encoding="utf-8") as file:
-#    for i in total[8:11]:
-#        file.write(i.text)
+with open("django_learning_topics.txt", "w", encoding="utf-8") as file:
+    for i in total[1:]:
+        file.write(i.text)
 
 
 
 data = {}
 c = 1
-for i in total[8:11]:
+for i in total[1:]:
     data.update({f"id_video {c}":{
         "title": i.text.replace("\n          ", ""),
         "url": i.get("href")
