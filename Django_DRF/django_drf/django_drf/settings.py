@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'teto_drf.apps.TetoDrfConfig',
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
