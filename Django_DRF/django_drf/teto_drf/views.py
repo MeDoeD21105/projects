@@ -10,8 +10,11 @@ from .models import *
 
 class TetoAPIView(APIView):
     def get(self, request):
-        lst = Teto.objects.all().values()
+        lst = Teto.objects.all()[:3].values()
         return Response({"posts": list(lst)})
+    
+    def post(self, request):
+        return Response({"Jopa": "Baka"})
 
 # Create your views here.
 #class TetoAPIView(generics.ListAPIView):
