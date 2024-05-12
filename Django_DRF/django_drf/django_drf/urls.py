@@ -20,5 +20,5 @@ from teto_drf.views import TetoAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/v1/tetolist/", TetoAPIView.as_view())
+    path("", TetoAPIView.as_view())
 ]
