@@ -1,39 +1,46 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data = None):
         self.data = data
         self.next = None
         
-        
+    def __str__(self):
+        return f"[{self.data}]->{self.next} Node"
+
 class Linkedlist:
     def __init__(self):
         self.head = None
+        
     def append(self, data):
         if self.head is None:
             self.head=Node(data)
-
-
-    def length(self):
-        count = 0
+            return data
         node = self.head
 
-        while node:
-            count += 1
-
-    def elem(self):
-        elements = []
-        node = self.head
-        while node:
-            elements.append(node.data)
+        while node.next:
             node = node.next
-        print(elements)
+
+        node.next = Node(data)
+        
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
 
     def __str__(self):
         return f"{self.head} ->Linked"
 
+
+
+
 kl = Linkedlist()
-kl.append(1)
-kl.append(2)
-kl.append(30)
+kl.append(5)
+kl.append(6)
+kl.prepend(3)
+kl.prepend(2)
+kl.prepend(1)
+kl.append(10)
+kl.append(20)
+kl.append(100)
+kl.append(200)
 print(kl)
-print(kl.length())
-kl.elem()
