@@ -17,16 +17,21 @@ class TetoAPIView(APIView):
     def post(self, request):
         serializer = TetoSerializers(data=request.data)
         serializer.is_valid(raise_exception=True)
-        
-        post_new = Teto.objects.create(
-            title = request.data["title"],
-            content = request.data["content"],
-            cat_id = request.data["cat_id"]
-        )
-        return Response({"post": TetoSerializers(post_new).data})
-        
+        serializer.save()
+        return Response({"post": serializer.data})
 
-# Create your views here.
-#class TetoAPIView(generics.ListAPIView):
-#    queryset = Teto.objects.all()
-#    serializer_class = TetoSerializer
+
+    def put(self, request, *args, **kwargs):
+        pk = kwargs.get("pk", None)
+        if not pk:
+            return Response({"error": "Method PUT now allowed"})
+        
+        try:
+            instance = Teto.objects.get(pk=pk)
+        except:
+            return Response({"error": "Object does now exists"})
+        
+        serilizer = TetoSerializers(data=request.data, instance=instance)
+        serilizer.is_valid(raise_exception=True)
+        serilizer.save()
+        return Response({"post": serilizer.data})
