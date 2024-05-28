@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("baka/", TetoAPIList.as_view()),
     path("baka/<int:pk>/", TetoAPIUpdate.as_view()),
+    path("teto/<int:pk>/", TetoAPIDetail.as_view()),
 ]
