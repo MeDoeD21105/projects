@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from teto_drf.views import TetoAPIView
+from teto_drf.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("baka/", TetoAPIView.as_view()),
-    path("baka/<int:pk>/", TetoAPIView.as_view()),
+    path("baka/", TetoAPIList.as_view()),
+    path("baka/<int:pk>/", TetoAPIUpdate.as_view()),
 ]
