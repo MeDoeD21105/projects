@@ -17,9 +17,8 @@ class TetoAPIList(generics.ListCreateAPIView):
 class TetoAPIUpdate(generics.UpdateAPIView):
     queryset = Teto.objects.all()
     serializer_class  = TetoSerializers
-
-
-class TetoAPIDetail(generics.RetrieveUpdateDestroyAPIView):
+    
+    
+class TetoAPIList(generics.RetrieveUpdateDestroyAPIView):
     queryset = Teto.objects.all()
     serializer_class = TetoSerializers
-    
