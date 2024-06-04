@@ -6,7 +6,7 @@ class Node:
     def __str__(self):
         return f"[{self.data}]->{self.next} Node"
 
-class Linkedlist:
+class Linked_List:
     def __init__(self):
         self.head = None
         
