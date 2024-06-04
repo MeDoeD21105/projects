@@ -33,7 +33,7 @@ class Linked_List:
 
 
 
-kl = Linkedlist()
+kl = Linked_List()
 kl.append(5)
 kl.append(6)
 kl.prepend(3)
