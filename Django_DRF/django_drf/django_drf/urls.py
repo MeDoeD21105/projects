@@ -15,12 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+
 from teto_drf.views import *
+
+router = routers.SimpleRouter()
+router.register(r"baka", TetoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("baka/", TetoAPIList.as_view()),
-    path("baka/<int:pk>/", TetoAPIUpdate.as_view()),
-    path("teto/<int:pk>/", TetoAPIList.as_view()),
+    path("", include(router.urls))
+    #path("baka/", TetoViewSet.as_view({"get": "list"})),
+    #path("baka/<int:pk>/", TetoViewSet.as_view({"put": "update", })),
+    #path("teto/<int:pk>/", TetoAPIDetail.as_view()),
 ]
